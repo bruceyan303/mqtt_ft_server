@@ -222,6 +222,7 @@ all: build
 build:mqtt
 
 clean:
+	rm -rf mqtt
 	rm -rf ${blddir}/samples/*
 	rm -rf ${blddir_work}/*
 
