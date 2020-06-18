@@ -101,15 +101,13 @@ int mqtt_biz_redis_cache_hex_buffer (MQTT_BIZ_INFO*          parms, const char *
     redisReply *reply = NULL;
 
 	if (NULL == parms)
-	{
-		printf("parms error\r\n");
+	{		
         return REDIS_MPM_CACHE_NOT_CONNECTED;
     }
 
     if (!bizinfo->redis_cli)
 	{
-		printf("redis_cli error\r\n");
-        return REDIS_MPM_CACHE_NOT_CONNECTED;
+		        return REDIS_MPM_CACHE_NOT_CONNECTED;
 	}
     	
     argv[0] = REDIS_HEX_OPT_SET;
@@ -123,8 +121,7 @@ int mqtt_biz_redis_cache_hex_buffer (MQTT_BIZ_INFO*          parms, const char *
 	
     reply = (redisReply *)redisCommandArgv(bizinfo->redis_cli, REDIS_HEX_OPT_ARGC_COUNT, argv, argvlen);
     if (!reply)
-	{
-		printf("redisCommandArgv error\r\n");
+	{		
         return REDIS_MPM_CACHE_EXEC_FAILED;     
     }
 

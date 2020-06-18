@@ -23,7 +23,7 @@
 #define MQTT_MSG_TOPIC_MAXLEN               	128
 
 void mqtt_ft_server_on_msg_arrvd_f(void *context, char *uid, MQTTClient_message *message)
-{
+{
 	MQTT_BIZ_INFO* bizinfo = (MQTT_BIZ_INFO*)context;
 	char rediskey[MQTT_MSG_TOPIC_MAXLEN] = {0};  
 	unsigned short fileidx = 0;
@@ -34,8 +34,7 @@ void mqtt_ft_server_on_msg_arrvd_f(void *context, char *uid, MQTTClient_message 
         return;
     }	
 
-    sprintf(&rediskey, "mpmp:%s", uid);        
-	printf("%s error\r\n", uid);
+    sprintf(&rediskey, "mpmp:%s", uid); 
 	
     fileidx = 0;
     fileidx += *(((char*)message->payload) + 2);
@@ -55,7 +54,7 @@ void mqtt_ft_server_on_msg_arrvd_f(void *context, char *uid, MQTTClient_message 
 }
 
 int mqtt_ft_server_on_msg_arrvd_e(void *context, char *uid, MQTTClient_message *message)
-{
+{
 #if 0
 	MQTT_BIZ_INFO* bizinfo = (MQTT_BIZ_INFO*)context;
 	char rediskey[MQTT_MSG_TOPIC_MAXLEN] = {0};  
