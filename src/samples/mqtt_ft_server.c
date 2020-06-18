@@ -144,7 +144,7 @@ static int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_mes
         if ('/' == topicchar)
 		{            
             fields[slashcnt] = &topic[0] + topicidx + 1;
-            printf("topic slash %d %s\r\n", slashcnt, fields[slashcnt]);
+            //printf("topic slash %d %s\r\n", slashcnt, fields[slashcnt]);
         
             slashcnt++;
 
