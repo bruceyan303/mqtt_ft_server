@@ -123,7 +123,7 @@ static int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_mes
 
 	if (NULL == bizinfo)
     {     
-        return;
+        return 1;
     }
     
     if ((MQTT_MSG_TOPIC_MAXLEN - 1) < topicLen)
